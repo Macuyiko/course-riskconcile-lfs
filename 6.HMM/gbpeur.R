@@ -46,8 +46,8 @@ hmmfit <- fit(hmm, emcontrol=em.control(classification='hard'))
 summary(hmmfit)
 
 data.clean$P <- factor(hmmfit@posterior$state)
-
 data.clean %>% ggplot(aes(x=TIME, y=LOGRET, color=P, group=1)) + geom_line(size=1)
+data.clean %>% ggplot(aes(x=TIME, y=CLOSE, color=P, group=1)) + geom_line(size=1)
 
 
 # Other packages:
